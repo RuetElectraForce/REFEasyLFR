@@ -316,10 +316,11 @@ The overall circuit diagram with an Arduino Nano would look like this ([Click he
 ![REFEasyLFR ckt](https://github.com/user-attachments/assets/602c9c49-00e5-4537-9865-95e1aad5f722)
 
 If you intend to change the PID gain values, `base_speed`, `max_speed`, `min_speed` or the `reference` through the menu system, remember to update the variables in the PIDConfig structure and reinitialize REFEasyLFR.
+
 Example: Updating the `baseSpeed`, `KpMin` through any menu function:
 ```cpp
-pc.baseSpeed = 150;
-pc.KpMin = 0.05;
+pc.baseSpeed = 150; //you have to write the variables as it is inside the library. 
+pc.KpMin = 0.05;    //not in the way that is declared in the user code. for example: base_speed;
 REFEasyLFR lfr(sc, mc, pc);
 ```
 N.B.: More details about the menu system coming soon!!
