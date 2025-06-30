@@ -320,7 +320,7 @@ Example: Updating the `baseSpeed`, `KpMin` through any menu function:
 ```cpp
 pc.baseSpeed = 150;
 pc.KpMin = 0.05;
-REFEasyLFR(sc, mc, pc);
+REFEasyLFR lfr(sc, mc, pc);
 ```
 N.B.: More details about the menu system coming soon!!
 
