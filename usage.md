@@ -311,3 +311,17 @@ void loop() {
   }
 }
 ```
+## 5. Circuit Diagram
+The overall circuit diagram with an Arduino Nano would look like this ([Click here to view detailed circuit](https://app.cirkitdesigner.com/project/8df65339-e6b2-4c45-b0c9-fccbe6c56bb0)). Notice that, in this circuit an OLED display and pushbuttons are added. You can use those components to make a menu system in which you can also use all the functionalities of the `REFEasyLFR` library. 
+![REFEasyLFR ckt](https://github.com/user-attachments/assets/602c9c49-00e5-4537-9865-95e1aad5f722)
+
+If you intend to change the PID gain values, `base_speed`, `max_speed`, `min_speed` or the `reference` through the menu system, remember to update the variables in the PIDConfig structure and reinitialize REFEasyLFR.
+Example: Updating the `baseSpeed`, `KpMin` through any menu function:
+```cpp
+pc.baseSpeed = 150;
+pc.KpMin = 0.05;
+REFEasyLFR(sc, mc, pc);
+```
+N.B.: More details about the menu system coming soon!!
+
+
