@@ -36,7 +36,7 @@ Also supports Raspberry Pi Pico (RP2040) when using the Arduino-Pico core.
 ---
 
 ## Installation
-1. Download the [latest release archive from GitHub](https://github.com/pololu/qtr-sensors-arduino/releases) and decompress it.
+1. Download the [latest release archive from GitHub](https://github.com/RuetElectraForce/REFEasyLFR) and decompress it.
 2. Rename the folder to "REFEasyLFR".
 3. Drag the "REFEasyLFR" folder into the "libraries" directory inside your Arduino sketchbook directory. You can view your sketchbook location by opening the "File" menu and selecting "Preferences" in the Arduino IDE. If there is not already a "libraries" folder in that location, you should make the folder yourself.
 4. After installing the library, restart the Arduino IDE.
