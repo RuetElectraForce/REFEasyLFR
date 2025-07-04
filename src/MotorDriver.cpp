@@ -47,7 +47,6 @@ void MotorDriver::_driveBTS(int l, int r) {
 }
 
 void MotorDriver :: _driveL298(int l, int r){
-  Serial.println("l298");
   if (l > 0) {
     digitalWrite(_cfg.lfPin, 1);
     digitalWrite(_cfg.lbPin, 0);
