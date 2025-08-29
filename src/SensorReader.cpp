@@ -91,7 +91,7 @@ uint32_t SensorReader::readLine() {
   return _lastValue;
 }
 
-void SensorReader::calibrate() {
+void SensorReader::calibrate(int iteration) {
   // init
   for (uint8_t i = 0; i < _cfg.numSensors; i++) {
     _maximum[i] = 0;
@@ -101,7 +101,7 @@ void SensorReader::calibrate() {
   pinMode(25, OUTPUT);
   digitalWrite(25, 1);
   // spin for N readings
-  for (uint16_t t = 0; t < 10000; t++) {
+  for (uint16_t t = 0; t < iteration; t++) {
     for (uint8_t i = 0; i < _cfg.numSensors; i++) {
       uint16_t v;
       if (_cfg.type == SensorType::MUX) {
@@ -188,3 +188,4 @@ void SensorReader :: printPosition()
   Serial.print("\t");
   Serial.println(_onLine);
 }
+
