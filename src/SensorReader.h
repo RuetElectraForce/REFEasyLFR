@@ -79,7 +79,7 @@ public:
 
   void begin();
   uint32_t readLine();                   // as given
-  void calibrate();   // runs Calibration()
+  void calibrate(int iter = 10000);   // runs Calibration()
   void printCalibration();
   void printPosition();
   void saveCalibration(int initAddress = 0);
@@ -110,3 +110,4 @@ private:
 };
 
 #endif // SENSOR_READER_H
+
