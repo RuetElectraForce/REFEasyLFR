@@ -16,7 +16,7 @@ public:
 
   //Declaring the wrapper methods to access functions from other headers
   uint16_t readLine() {return _sr.readLine();} //need to write 'return' only if the method returns a value. 
-  void calibrate() {_sr.calibrate();}          //for void methods no need to write return
+  void calibrate(int iteration) {_sr.calibrate(iteration);}          //for void methods no need to write return
   void readCalibration(int addr) {_sr.readCalibration(addr);}
   void printCalibration() {_sr.printCalibration();}
   void printPosition() {_sr.printPosition();}
@@ -40,3 +40,4 @@ private:
 };
 
 #endif // LINE_FOLLOWER_BOT_H
+
