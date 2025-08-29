@@ -8,7 +8,7 @@ struct PIDConfig {
   float KpMin, KpMax, Ki, KdMin, KdMax;
   int   baseSpeed, minSpeed, maxSpeed;
   // float divisor;      // for dynamic speed scaling
-  uint16_t ref;
+  uint16_t ref = 6500;
 };
 
 class LineController {
@@ -26,3 +26,4 @@ private:
 };
 
 #endif // LINE_CONTROLLER_H
+
