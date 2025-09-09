@@ -56,7 +56,8 @@ void setup() {
   lfr.begin();
   Serial.begin(9600);
   //For the first time use on a track use the calibrate function to calibrate
-  lfr.calibrate();
+  lfr.calibrate(5000); // Enter the number of iterations for which the bot will calibrate. 
+                       // For Arduinos 5000 is enough, but for PICO it should be 10000 as the clk speed is high.
 
   /* For further use on the same track you can skip the calibration by 
   reading the calibrated values from the EEPROM. For that case uncomment this line and comment
@@ -67,8 +68,7 @@ void setup() {
 
 void loop() {
   //To run the robot using only the built-in PID control system use this lfr.runOnce() function
-  lfr.calibrate(5000); // Enter the number of iterations for which the bot will calibrate. 
-                       // For Arduinos 5000 is enough, but for PICO it should be 10000 as the clk speed is high.
+  lfr.runOnce();
 
   /* You can also do this by individually accessing the readLine() and followLine() function.
   This gives you more flexibility if you want to use the position value for implementing other
