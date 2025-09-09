@@ -72,7 +72,8 @@ void setup() {
   lfr.begin();
   Serial.begin(9600);
   //For the first time use on a track use the calibrate function to calibrate
-  lfr.calibrate();
+  lfr.calibrate(5000); // Enter the number of iterations for which the bot will calibrate. 
+                       // For Arduinos 5000 is enough, but for PICO it should be 10000 as the clk speed is high.
 
   /* For further use on the same track you can skip the calibration by 
   reading the calibrated values from the EEPROM. For that case uncomment this line and comment
@@ -100,3 +101,4 @@ void loop() {
     lfr.drive(0, 0);  //If the robot needs to stop at the end point. Apply logics according to your requirement.
   }
 }
+
